@@ -1,0 +1,117 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    
+<title>GamePanti</title>
+  <link href="{{ url_for('static', filename='img/favicon1.ico')}}" rel="icon">
+  <link href="{{ url_for('static', filename='img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+
+  <style>
+   h1 {text-align: center;color: white;}
+p {text-align: center;color: darkblue;}
+h2 {text-align: center;color: darkblue;} 
+form{text-align: center;color: white;}
+label{text-align: center;color: darkblue; }
+
+.vert {
+  border: 7px solid green;
+}
+.verti {
+  border-left: 7px solid green;
+  border-right: 7px solid green;
+}
+
+
+.hori {
+  border-top: 7px solid green;
+  border-bottom: 7px solid green;
+}
+
+.btn{
+
+  background-color: white; 
+  color: black; 
+  
+  border-radius: 8px;
+  font-size: 30px;
+}
+
+
+.btn:hover {
+  background-color: dodgerblue;
+  color: white;
+}
+#ch{
+  background-color: lightgrey;
+  width:30%;
+  height: 30%
+  }
+  @media (max-width: 992px) {
+  #ch{
+   width: 40%;
+   height: 20%
+
+  }}
+</style>
+</head>
+  <body style="background-color:white;">
+     <table width="100%">
+
+        <tr style="background-color:darkblue;width:300%px;height:250">
+            <td align="center"><b>
+                    <div class="container">
+            <div class="jumbotron">
+             <h1> <font size="120">Tic Tac Toe</font></h1>
+               <p style="color:white;font-size: 30px">{{res}}<br>{{res1}}<br>{{res2}}</p>
+                <p style="color:white;font-size: 30px">{{g}}</p>
+                <center> <a href="/"><button class= "btn">Home</button></a></center>
+            </div>
+             </b></td>
+        </tr>
+        
+
+        
+        </table>
+<table id="ch">
+
+  <tr>
+    <td><strong><p  style="font-size: 40px;color: red;">{{l[1]}}</p></td></strong>
+    <td class="verti"><strong><p style="font-size: 40px;color: red;">{{l[2]}}</p></td></strong>
+    <td><strong><p  style="font-size: 40px;color: red;">{{l[3]}}</p></td></strong>
+  </tr>
+  <tr>
+    <td class="hori"><strong><p style="font-size: 40px;color: red;">{{l[4]}}</p></td></strong>
+    <td class="vert"><strong><p style="font-size: 40px;color: red;">{{l[5]}}</p></td></strong>
+    <td class="hori"><strong><p style="font-size: 40px;color: red;">{{l[6]}}</p></td></strong>
+  </tr>
+  <tr>
+    <td><strong><p  style="font-size: 40px;color: red;">{{l[7]}}</p></td></strong>
+    <td class="verti"><strong><p style="font-size: 40px;color: red;">{{l[8]}}</p></td></strong>
+    <td><strong><p  style="font-size: 40px;color: red;">{{l[9]}}</p></td></strong>
+  </tr>
+
+</table>
+<div class="container">
+  <div class="center">
+
+    <form class="form-signin" action="/ttp" method="post" style="color: white;size: 50px;">
+     
+      <label for="uname" class="sr-only"> <font size="6" id="ba">Enter position to place your symbol(1-9).</font></label>
+      <input type="text" id="uname" name="uname" class="form-control" placeholder={{m}} required autofocus style="size: 30px;height: 35px;">
+     
+      
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+
+      
+      
+    </form>
+
+ 
+  </div>
+</div>
+
+    
+    
+    
+  </body>
+</html>
