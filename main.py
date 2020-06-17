@@ -238,6 +238,7 @@ def play4():
                 if s2 > 21:
                      rb="Player Busts..Dealer Wins!"
                      chip=chip-bet
+                     bet=0
             else:
                 ph="Wrong_Choice"
                 return render_template('bp.html',ph=ph,rb=rb,one=one,two="<hidden>",three=three,j=jj,k=kk,s1=s1,s2=s2)
@@ -245,14 +246,18 @@ def play4():
         if s1>21:
             chip=chip+bet
             rb="Dealer Busts.. Player Wins!"
+            bet=0
         elif s1>s2:
             chip=chip-bet
             rb="Dealer Win!"
+            bet=0
         elif s2>s1:
             rb="Player Win!"
             chip=chip+bet
+            bet=0
         else:
             rb="Draw"
+            bet=0
        
     
     return render_template('bp.html',ph=ph,rb=rb,one=one,two="<hidden>",three=three,j=jj,k=kk,s1=s1,s2=s2)
